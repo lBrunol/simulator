@@ -20,7 +20,7 @@ func (k *KafkaConsumer) Consume() {
 	if err != nil {
 		log.Fatal("error on consuming kafka. Message:" + err.Error())
 	}
-	topics := []string{os.Getenv("KafkaReadTopics")}
+	topics := []string{os.Getenv("KafkaReadTopic")}
 	c.SubscribeTopics(topics, nil)
 	for {
 		msg, err := c.ReadMessage(-1)
